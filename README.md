@@ -7,12 +7,11 @@ A brief description of your project.
 - [Installation](#installation)
 - [Usage](#usage)
 - [API Documentation](#api-documentation)
-- [Contributing](#contributing)
-- [License](#license)
+
 
 ## Installation
 
-git clone 
+git clone https://github.com/arvind3417/hybr1d.git
 
 ## Usage
 
