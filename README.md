@@ -22,6 +22,6 @@ npm install
 
 ## API Documentation
 
-Access the Swagger API documentation at: http://localhost:8001/api/v1/docs
+Access the Swagger at: http://localhost:8001/api/v1/docs
 
 
