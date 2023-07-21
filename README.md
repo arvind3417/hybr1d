@@ -1,6 +1,3 @@
-E-Commerce Marketplace API
-
-Welcome to the E-Commerce Marketplace API! This API provides endpoints to manage an e-commerce marketplace, including user authentication, seller and buyer operations, product catalogs, and order management. The API is built with Node.js and Express and uses MongoDB as the database.
 
 Getting Started
 
