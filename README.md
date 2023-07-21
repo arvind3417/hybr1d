@@ -12,10 +12,11 @@ A brief description of your project.
 ## Installation
 
 git clone https://github.com/arvind3417/hybr1d.git
+npm install
+
 
 ## Usage
-
-1) npm install
+1) npm run dev
 2) you're ready to dig in!
 
 ## API Documentation
