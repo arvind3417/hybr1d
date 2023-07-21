@@ -48,10 +48,4 @@ Contributing
 
 Contributions to this project are welcome! If you find a bug, have a feature request, or want to make any improvements, please open an issue or submit a pull request. We appreciate your contributions and feedback.
 
-License
 
-This project is licensed under the MIT License.
-
----
-
-Thank you for using the E-Commerce Marketplace API! If you have any questions or need further assistance, feel free to reach out. Happy coding!
