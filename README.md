@@ -12,6 +12,7 @@ A brief description of your project.
 ## Installation
 
 git clone https://github.com/arvind3417/hybr1d.git
+
 npm install
 
 
