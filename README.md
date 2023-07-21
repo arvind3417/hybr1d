@@ -12,21 +12,15 @@ A brief description of your project.
 
 ## Installation
 
-Provide instructions on how to install and set up your project. Include any dependencies or requirements.
+git clone 
 
 ## Usage
 
-Explain how to use your project. Include code examples or usage scenarios.
+1) npm install
+2) you're ready to dig in!
 
 ## API Documentation
 
 Access the Swagger API documentation at: http://localhost:8001/api/v1/docs
 
-## Contributing
-
-Provide guidelines for others who want to contribute to your project. Include information about how to submit issues, pull requests, and any coding conventions.
-
-## License
-
-Specify the license under which your project is released.
 
