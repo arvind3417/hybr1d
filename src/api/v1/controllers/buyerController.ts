@@ -92,7 +92,8 @@ export const createOrder = asyncWrapper(
   export const sellers = asyncWrapper(
     async (_req: Request, _res: Response, _next: NextFunction) => {
         try {
-            const sellers = await User.find({ role: 'seller' });
+            // const sellers = await User.find({ role: 'seller' });
+            const sellers = await User.find({ role: 'seller' }).select('-password');
             _res
           .status(StatusCodes.OK)
           .json(

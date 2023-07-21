@@ -1,5 +1,47 @@
 import mongoose from 'mongoose';
 
+/**
+ * @swagger
+ * components:
+ *  schemas:
+  *    Product:
+ *      type: object
+ *      properties:
+ *        name:
+ *          type: string
+ *          description: The name of the product.
+ *        price:
+ *          type: number
+ *          default: The price of the product.
+ *    CreateCatalogInput:
+ *      type: object
+ *      required:
+ *       - sellerId
+ *       - products
+ *      properties:
+ *        products:
+ *          type: array
+ *          items: 
+ *            $ref: "#/components/schemas/Product"
+ *        sellerId:
+ *          type: string
+ *          default: 123
+ */
+/**
+ * @swagger
+ * components:
+ *  schemas:
+ *    CreateCatalogResponse:
+ *      type: object
+
+ *      properties:
+ *        sellerId:
+ *          type: string
+ *        products:
+ *          type: array
+
+ * 
+ */
 const CatalogSchema = new mongoose.Schema({
     // sellerId: String,
     sellerId: {
