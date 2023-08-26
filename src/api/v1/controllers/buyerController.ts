@@ -14,6 +14,7 @@ import { Catalog } from "../models/catalog";
 import { Order } from "../models/orders";
 import normalizeModel from "../helpers/normalizer";
 import * as validators from "../helpers/validators";
+import { buyerRouter } from "../routes/BuyerRoutes";
 
 const FIELDS = [
     { name: "buyerId", validator: validators.isString },
@@ -22,6 +23,10 @@ const FIELDS = [
   
     
   ];
+
+
+  //
+// user, catalog, quantity
 
   export const sellerCatalog = asyncWrapper(
     async (_req: Request, _res: Response, _next: NextFunction) => {
@@ -67,7 +72,8 @@ export const createOrder = asyncWrapper(
     }
   );
 
-  export const ordersByBuyer = asyncWrapper(
+  export const ordersByBuyer = 
+  asyncWrapper(
     async (_req: Request, _res: Response, _next: NextFunction) => {
       try {
         const { buyerId } = _req.params;

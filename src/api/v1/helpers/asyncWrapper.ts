@@ -17,6 +17,8 @@ const asyncWrapper =
     try {
       await callback(_req, _res, _next);
     } catch (error: any) {
+      console.log("hey");
+      
       console.error(error.message);
       if (error instanceof mongoose.Error.CastError) {
         _next(new CustomError.BadRequestError("Invalid user id"));

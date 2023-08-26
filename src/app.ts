@@ -16,11 +16,17 @@ import { grantAdminAccessrouter } from "./api/v1/routes/grant_Admin_Access";
 import { sellerRouter } from "./api/v1/routes/sellerRoutes";
 import { buyerRouter } from "./api/v1/routes/BuyerRoutes";
 import swaggerDocs from "./config/swagger/swagger";
-
+import morgan from 'morgan';
+import fs from 'fs';
+import path from 'path';
 // Use express app 
 const app = express();
 
-// Middleware
+
+// Define the custom token for logging user ID
+
+// Create the Morgan middleware with the custom format and stream
+
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(cors());
@@ -53,18 +59,5 @@ app.get("/ok", (_req, res) =>
 app.use(routeNotFound);
 app.use(errorHandler);
 
-const port = process.env.PORT || PORT;
+export default app;
 
-try {
-  // connect to database
-  if (!process.env.CONNECTIONSTR)
-    throw new Error("No connection string found in .env file");
-  connectDB(process.env.CONNECTIONSTR);
-  // Server setup
-  app.listen(port, () => {
-    console.log(`Server listening on: http://localhost:${port}/`);
-    
-  });
-} catch (error) {
-  console.error(error);
-}

@@ -7,6 +7,7 @@ import { User } from "../models/users";
 import * as CustomErrors from "../errors";
 import asyncWrapper from "../helpers/asyncWrapper";
 import { httpResponse } from "../helpers";
+import { log } from "console";
 
 export const loginController = asyncWrapper(
   async (_req: Request, _res: Response, _next: NextFunction) => {
@@ -46,28 +47,44 @@ export const loginController = asyncWrapper(
   }
 );
 
-export const registerController = asyncWrapper(
+export const registerController = 
+// asyncWrapper(
   async (_req: Request, _res: Response, _next: NextFunction) => {
+    console.log("het registerr reyy");
+    
     if (
     //   !_req.body.firstname ||
       !_req.body.name ||
       !_req.body.email ||
       !_req.body.password ||
       !_req.body.role
-    )
+    ){
+      
       return _next(
         new CustomErrors.BadRequestError("Please provide all required fields")
-      );
+        );
+      }
+      
+      let user = await User.findOne({
+        email: _req.body.email,
+      });
+      if (user){
+      console.log("user is found ig");
 
-    let user = await User.findOne({
-      email: _req.body.email,
-    });
-    if (user)
       return _next(new CustomErrors.BadRequestError("User already exists"));
+    }
     else {
       try {
         const hashedPassword = hashPassword(_req.body.password);
+        console.log(hashedPassword);
+        
+       
+        
+        
         user = await User.create({ ..._req.body, password: hashedPassword });
+        
+        console.log(user);
+        
       } catch (err: any) {
         return _next(
           new CustomErrors.BadRequestError("Invalid user data " + err.message)
@@ -81,6 +98,6 @@ export const registerController = asyncWrapper(
           refreshToken,
         })
       );
-    }
+    } 
   }
-);
+// );
